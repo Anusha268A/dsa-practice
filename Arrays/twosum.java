@@ -23,3 +23,25 @@ class Solution {
         return new int[]{};
    }
 }
+
+
+
+//Algorithm that takes less than O(n2) time complexity
+//Solution 2
+
+class Solution {
+    public int[] twoSum(int[] nums, int target) {
+        int n=nums.length;
+        Map<Integer,Integer> map=new HashMap<>();
+
+        for(int i=0;i<n;i++){
+        int diff = target - nums[i];
+        if(map.containsKey(diff))
+        {
+            return new int[]{map.get(diff),i};
+        }   
+        map.put(nums[i],i);
+        }
+        return null;
+    }
+}
